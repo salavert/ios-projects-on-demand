@@ -1,0 +1,38 @@
+// Build config
+
+ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon
+ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor
+ENABLE_PREVIEWS = YES
+LD_RUNPATH_SEARCH_PATHS = $(inherited) @executable_path/Frameworks
+
+// Deployment
+
+TARGETED_DEVICE_FAMILY = 1
+
+// App config
+
+DISPLAY_NAME = Telefonica
+INFOPLIST_FILE = App/SupportFiles/Info.plist
+PRODUCT_NAME = $(TARGET_NAME)
+
+// URL Scheme
+
+// APP_URL_SCHEME = telefonica
+
+// Signing - Debug
+
+PRODUCT_BUNDLE_IDENTIFIER_Debug = com.telefonica.enterprise.PlaceYourAppIdHere
+PROVISIONING_PROFILE_SPECIFIER_Debug = // debug-development-PlaceYourAppIdHere
+SWIFT_ACTIVE_COMPILATION_CONDITIONS_Debug = DEBUG
+
+// Signing - Enterprise
+
+PRODUCT_BUNDLE_IDENTIFIER_Enterprise = com.telefonica.enterprise.PlaceYourAppIdHere
+PROVISIONING_PROFILE_SPECIFIER_Enterprise = enterprise-distribution-PlaceYourAppIdHere
+SWIFT_ACTIVE_COMPILATION_CONDITIONS_Enterprise = DEBUG ENTERPRISE
+
+// Signing - Release
+
+PRODUCT_BUNDLE_IDENTIFIER_Release = com..PlaceYourAppIdHere
+PROVISIONING_PROFILE_SPECIFIER_Release = distribution-PlaceYourAppIdHere
+SWIFT_ACTIVE_COMPILATION_CONDITIONS_Release =

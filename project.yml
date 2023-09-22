@@ -1,0 +1,55 @@
+name: MyProject
+options:
+  minimumXcodeGenVersion: 2.37.0
+  generateEmptyDirectories: true
+  groupSortPosition: top
+  developmentLanguage: en
+  defaultConfig: Release
+  createIntermediateGroups: true
+
+configs:
+  Debug: debug
+  Enterprise: release
+  Release: release
+
+packages:
+  mistica-ios:
+    url: https://github.com/Telefonica/mistica-ios
+    from: 26.0.1
+  swift-composable-architecture:
+    url: https://github.com/pointfreeco/swift-composable-architecture
+    from: 1.2.0  
+  novum-platform-ios:
+    url: https://github.com/Telefonica/novum-platform-ios
+    branch: main
+
+targets:
+  MyTarget:
+    type: application
+    platform: iOS
+    deploymentTarget: 14.0
+    sources:
+      - App
+    configFiles:
+      Debug: App/SupportFiles/BuildConfigs/MyTarget.xcconfig
+      Enterprise: App/SupportFiles/BuildConfigs/MyTarget.xcconfig
+      Release: App/SupportFiles/BuildConfigs/MyTarget.xcconfig
+    info:
+      path: App/SupportFiles/Info.plist
+      properties:
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+        UILaunchScreen: []
+    dependencies:
+      - package: mistica-ios
+        product: Mistica
+      - package: swift-composable-architecture
+        product: ComposableArchitecture
+      - package: novum-platform-ios
+        product: Logger
+      - package: novum-platform-ios
+        product: Tweaks
+    entitlements:
+      path: App/SupportFiles/CodeSign.entitlements
+      properties:
+        aps-environment: $(APS_ENVIRONMENT)
+        com.apple.security.application-groups: $(APP_GROUP_NAME)

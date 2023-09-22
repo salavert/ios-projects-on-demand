@@ -1,0 +1,32 @@
+#include "Base.xcconfig"
+
+// Build options
+
+DEBUG_INFORMATION_FORMAT = dwarf
+ENABLE_TESTABILITY = YES
+GCC_DYNAMIC_NO_PIC = NO
+GCC_OPTIMIZATION_LEVEL = 0
+MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE
+ONLY_ACTIVE_ARCH = YES
+SWIFT_OPTIMIZATION_LEVEL = -Onone
+VALIDATE_PRODUCT = NO
+
+// Apple Clang - Language - Preprocessing
+
+GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1" $(BASE_GCC_PREPROCESSOR_DEFINITIONS)
+
+// Signing
+
+CODE_SIGN_STYLE = Automatic
+CODE_SIGN_IDENTITY = iPhone Developer
+DEVELOPMENT_TEAM = JA666WMX28
+APP_GROUP_NAME = //group.com.telefonica.enterprise
+APS_ENVIRONMENT = development
+
+// The `SAMPLE_CODE_DISAMBIGUATOR` configuration is to make it easier to build
+// and run a sample code project. Once you set your project's development team,
+// you'll have a unique bundle identifier. This is because the bundle identifier
+// is derived based on the 'SAMPLE_CODE_DISAMBIGUATOR' value. Do not use this
+// approach in your own projects—it's only useful for sample code projects because
+// they are frequently downloaded and don't have a development team set.
+SAMPLE_CODE_DISAMBIGUATOR=${DEVELOPMENT_TEAM}

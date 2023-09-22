@@ -1,0 +1,28 @@
+#include "Base.xcconfig"
+
+// User-Defined
+
+MTL_ENABLE_DEBUG_INFO = NO
+
+// Swift Compiler
+
+SWIFT_COMPILATION_MODE = wholemodule
+SWIFT_OPTIMIZATION_LEVEL = -O
+
+// Deployment
+
+COPY_PHASE_STRIP = YES
+STRIP_INSTALLED_PRODUCT = YES
+DEPLOYMENT_POSTPROCESSING = YES
+
+// Apple Clang - Language - Preprocessing
+
+ENABLE_NS_ASSERTIONS = NO
+GCC_PREPROCESSOR_DEFINITIONS = $(BASE_GCC_PREPROCESSOR_DEFINITIONS)
+
+// Signing
+
+CODE_SIGN_IDENTITY = Apple Distribution: Telefonica Digital España S.L.U. (E3WR764V5V)
+DEVELOPMENT_TEAM = E3WR764V5V
+APP_GROUP_NAME = //group.com.telefonica
+APS_ENVIRONMENT = production

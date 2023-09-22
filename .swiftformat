@@ -1,0 +1,19 @@
+# file options
+
+--exclude .swiftpm,vendor,**/Resources,Scripts
+
+# format options
+
+--allman false
+--indent 4
+--stripunusedargs closure-only
+--decimalgrouping 3,4
+--commas inline
+--maxwidth none
+--wraparguments before-first
+--wrapcollections before-first
+--header ""
+
+# rules
+
+--disable hoistPatternLet,redundantRawValues,andOperator,redundantNilInit,wrapMultilineStatementBraces
