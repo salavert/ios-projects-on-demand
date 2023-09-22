@@ -32,10 +32,6 @@ public struct AppReducer: Reducer {
         case onBackToForeground
         case onOpenURL(URL)
         case selectedTabChanged(Tab)
-        
-        public enum Alert: Equatable {
-            case cancel
-        }
     }
 
     public init() {}
@@ -62,14 +58,14 @@ public struct AppReducer: Reducer {
             case let .onOpenURL(url):
                 Log.debug(.app, "Open url \(url)")
                 return .none
-
-            case .didChangeScenePhase:
-                return .none
             
             case let .developerSettings(isPresented: isPresented):
                 if state.areDeveloperSettingsEnabled {
                     state.areDeveloperSettingsPresented = isPresented
                 }
+                return .none
+
+            case .didChangeScenePhase:
                 return .none
             
             case .onBackToForeground:
@@ -131,7 +127,7 @@ struct AppView: View {
             }
             .misticaNavigationViewStyle()
         }
-        .background(Color.backgroundBrand.edgesIgnoringSafeArea(.all))
+        .background(Color.background.edgesIgnoringSafeArea(.all))
         .onShake {
             if viewStore.areDeveloperSettingsEnabled {
                 viewStore.send(.developerSettings(isPresented: true))
