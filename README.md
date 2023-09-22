@@ -1,4 +1,4 @@
-# Generating a new iOS project for Telefonica
+# Generating a new iOS project
 
 This repository offers the possibility to generate a new iOS project with some features out of the box:
 
@@ -24,7 +24,7 @@ With the tool [XcodeGen](https://github.com/yonaskolb/XcodeGen) we can define a 
     brew install xcodegen
     ```
 
-1. Replace `MyProject` and `MyTarget` with your project name target on `project.yml`.
+1. Replace `MyProject` and `MyTarget` with your project name and target on `project.yml`.
 
 1. Rename App/SupportFiles/BuildConfigs/`MyTarget`.xcconfig
 
